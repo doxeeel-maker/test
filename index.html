@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>미국 치대 컨설팅</title>
+  <style>
+    :root {
+      --blue: #395896;
+      --light-blue: #e8efff;
+      --gray: #5a6572;
+      --accent: #f7b032;
+      --bg: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e1e7ef;
+    }
+    .nav {
+      max-width: 1100px;
+      padding: 1.2rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.2rem;
+      font-size: 0.95rem;
+    }
+    .logo {
+      font-weight: 700;
+      color: var(--blue);
+      font-size: 1.2rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    .hero {
+      background: linear-gradient(130deg, var(--light-blue), #ffffff 40%);
+      padding: 4rem 1.2rem;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero h1 {
+      color: var(--blue);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.8rem;
+    }
+    .btn {
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-secondary { background: #fff; color: var(--blue); border: 1px solid var(--blue); }
+    .btn:hover { transform: translateY(-2px); }
+    section { padding: 4rem 1.2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h2 { color: var(--blue); font-size: clamp(1.7rem, 3vw, 2.1rem); margin-bottom: 1.2rem; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.6rem;
+      box-shadow: 0 12px 25px rgba(57, 88, 150, 0.08);
+      min-height: 180px;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: var(--blue);
+      font-size: 1.2rem;
+    }
+    .process {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .process-step {
+      background: #fff;
+      border-left: 6px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+    .process-step span {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .stat {
+      background: #fff;
+      padding: 2rem 1rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(57, 88, 150, 0.08);
+    }
+    .stat strong { display: block; font-size: 2rem; color: var(--blue); }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .testimonial {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 20px rgba(57, 88, 150, 0.08);
+    }
+    .cta {
+      background: var(--blue);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1.2rem;
+    }
+    .cta h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      max-width: 680px;
+      margin: 1.5rem auto 0;
+    }
+    .cta-form input, .cta-form select {
+      padding: 0.9rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    .cta-form button { background: var(--accent); color: #1b2a4b; }
+    footer {
+      background: #0f1f3a;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 2.5rem 1.2rem;
+    }
+    footer .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    footer h4 { margin: 0 0 0.8rem; color: #fff; }
+    footer ul { list-style: none; padding: 0; margin: 0; }
+    footer li { margin-bottom: 0.5rem; }
+    footer .social a { display: inline-block; margin-right: 0.6rem; color: rgba(255,255,255,0.8); }
+    @media (max-width: 640px) {
+      .nav ul { flex-wrap: wrap; justify-content: center; }
+      .hero { padding-top: 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">US Dental Consulting</div>
+      <ul>
+        <li><a href="#hero">홈</a></li>
+        <li><a href="#services">서비스</a></li>
+        <li><a href="#success">성공사례</a></li>
+        <li><a href="#team">컨설턴트</a></li>
+        <li><a href="#blog">블로그</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">상담예약</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div>
+          <h1>미국 치대 합격을 위한 1:1 맞춤 컨설팅</h1>
+          <p>사전 평가부터 합격 후 준비까지 전 과정 전문 관리. 평균 합격률 87%, 누적 합격자 320명 이상의 경험을 만나보세요.</p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary">무료 상담 신청</button>
+            <button class="btn btn-secondary">합격 사례 보기</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>핵심 가치</h3>
+          <ul>
+            <li>개인화 로드맵 설계</li>
+            <li>에세이 & 인터뷰 전담 코칭</li>
+            <li>원서 타임라인 & 체크리스트 관리</li>
+            <li>재정·비자·기숙사 정보 제공</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2>컨설팅 패키지</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>기본 패키지</h3>
+            <p>사전 평가와 SWOT 분석을 기반으로 목표 학교에 맞춘 전략 설계를 제공합니다.</p>
+          </div>
+          <div class="card">
+            <h3>프리미엄 패키지</h3>
+            <p>서류 준비부터 제출, 인터뷰 및 최종 등록까지 전 과정 동행 관리 프로그램입니다.</p>
+          </div>
+          <div class="card">
+            <h3>에세이 집중</h3>
+            <p>Personal Statement, Secondary Essay, 추천서 포트폴리오에 대한 집중 피드백을 제공합니다.</p>
+          </div>
+          <div class="card">
+            <h3>인터뷰 부스터</h3>
+            <p>Mock Interview, 예상 질문 리스트, 비언어 커뮤니케이션 코칭을 통해 면접 대비를 도와드립니다.</p>
+          </div>
+          <div class="card">
+            <h3>재지원 맞춤</h3>
+            <p>지난 탈락 원인을 분석 후 보완 전략과 새로운 지원 플랜을 제시합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>진행 프로세스</h2>
+        <div class="process">
+          <div class="process-step"><span>01</span> 목표 설정 &nbsp;|&nbsp; 희망 학교, 일정, 예산, DAT 목표를 함께 정리합니다.</div>
+          <div class="process-step"><span>02</span> 경쟁력 분석 &nbsp;|&nbsp; GPA, Activity, Shadowing, Reference 등 강약점을 점검합니다.</div>
+          <div class="process-step"><span>03</span> 전략 설계 &nbsp;|&nbsp; 학교 리스트, 타임라인, 필수 준비 리소스를 제공합니다.</div>
+          <div class="process-step"><span>04</span> 실행 코칭 &nbsp;|&nbsp; 에세이 첨삭, 인터뷰 코칭, 원서 제출을 관리합니다.</div>
+          <div class="process-step"><span>05</span> 합격 후 지원 &nbsp;|&nbsp; I-20, 비자, 주거, 보험, 사전 오리엔테이션을 돕습니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="success">
+      <div class="container">
+        <h2>성공사례 & 데이터</h2>
+        <div class="timeline">
+          <div class="testimonial">
+            <h3>김미소 | University of Michigan</h3>
+            <p>DAT 재도전과 에세이 구성을 전면 수정한 결과, 인터뷰 초청 3곳과 함께 최종 합격을 달성했습니다.</p>
+            <p><strong>키포인트:</strong> Mock Interview 6회, 활동 포트폴리오 재정비, 입학처 피드백 활용.</p>
+          </div>
+          <div class="testimonial">
+            <h3>Lee Jae | UCLA School of Dentistry</h3>
+            <p>GPA 대비 활동 경쟁력을 높이기 위해 Shadowing 플랜과 봉사활동을 구조화해 경쟁력을 확보했습니다.</p>
+            <p><strong>키포인트:</strong> 추천서 멘토링, 에세이 톤 조정, 인터뷰 Q&A 데이터베이스.</p>
+          </div>
+          <div class="testimonial">
+            <h3>박소연 | NYU College of Dentistry</h3>
+            <p>국제 지원자 맞춤 전략으로 비자 및 장학금까지 연계한 종합 패키지로 합격을 이뤘습니다.</p>
+            <p><strong>키포인트:</strong> TOEFL 스코어 관리, 재정 보증 설계, Post-acceptance 가이드.</p>
+          </div>
+        </div>
+        <div class="stats" style="margin-top: 2rem;">
+          <div class="stat">
+            <strong>87%</strong>
+            평균 합격률 (최근 3년)
+          </div>
+          <div class="stat">
+            <strong>320+</strong>
+            누적 합격자 수
+          </div>
+          <div class="stat">
+            <strong>4.8/5</strong>
+            고객 만족도 점수
+          </div>
+          <div class="stat">
+            <strong>6.5개월</strong>
+            평균 합격 소요 기간
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <h2>컨설턴트 소개</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>정하늘 수석 컨설턴트</h3>
+            <p>전 미국 치대 입학처 어드미션 오피서. 전략 수립 및 에세이 스토리텔링 전문가.</p>
+            <p><strong>전문분야:</strong> Pre-Dental 로드맵, 인터뷰 코칭</p>
+          </div>
+          <div class="card">
+            <h3>최은재 컨설턴트</h3>
+            <p>NYU 치대 졸업 & 미국 임상 경력 8년. 재정 설계 및 비자 멘토링 담당.</p>
+            <p><strong>전문분야:</strong> 국제 지원자, 장학금 컨설팅</p>
+          </div>
+          <div class="card">
+            <h3>박도윤 컨설턴트</h3>
+            <p>DAT 고득점 멘토로 성적 향상 및 시험 일정 관리에 특화된 프로그램을 운영합니다.</p>
+            <p><strong>전문분야:</strong> DAT 준비, 포트폴리오 구축</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="container">
+        <h2>인사이트 & 리소스</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>미국 치대 입시 흐름 완벽 가이드</h3>
+            <p>원서 제출 시기, AADSAS 구성, 주요 준비물을 정리했습니다.</p>
+          </div>
+          <div class="card">
+            <h3>DAT 준비 전략</h3>
+            <p>시험 영역별 학습법, 추천 교재, 12주 학습 플랜을 체크해보세요.</p>
+          </div>
+          <div class="card">
+            <h3>에세이 작성 핵심 팁</h3>
+            <p>Personal Statement에서 강조해야 할 스토리라인과 톤을 설명합니다.</p>
+          </div>
+          <div class="card">
+            <h3>인터뷰 기출 & 모범 답변</h3>
+            <p>최근 5년 인터뷰 질문과 답변 전략을 큐레이션했습니다.</p>
+          </div>
+          <div class="card">
+            <h3>장학금 & 비자 정보</h3>
+            <p>DS-160, I-20, 장학금 신청 로드맵을 안내합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2>자주 묻는 질문</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>상담은 어떻게 진행되나요?</h3>
+            <p>사전 설문 작성 후 온라인 미팅으로 현재 상황을 분석하고 맞춤 제안을 드립니다.</p>
+          </div>
+          <div class="card">
+            <h3>비용과 결제 방식은?</h3>
+            <p>패키지마다 비용이 상이하며, 카드·계좌이체·분할 결제가 가능합니다.</p>
+          </div>
+          <div class="card">
+            <h3>해외 거주자도 지원 가능한가요?</h3>
+            <p>온라인 기반으로 모든 서비스를 제공하며, 시차에 맞춰 상담 일정을 조율합니다.</p>
+          </div>
+          <div class="card">
+            <h3>컨설팅 기간은 어떻게 되나요?</h3>
+            <p>목표 학교 일정과 상황에 맞춰 3개월~12개월까지 유연하게 설계됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <h2>무료 상담으로 나만의 로드맵을 받아보세요</h2>
+      <p>아래 정보를 남겨주시면 24시간 이내 전문 컨설턴트가 연락드립니다.</p>
+      <form class="cta-form">
+        <input type="text" placeholder="이름" required>
+        <input type="email" placeholder="이메일" required>
+        <select required>
+          <option value="" disabled selected>목표 학교 선택</option>
+          <option>미시간 치대</option>
+          <option>UCLA 치대</option>
+          <option>NYU 치대</option>
+          <option>기타</option>
+        </select>
+        <button class="btn btn-primary" type="submit">상담 예약</button>
+      </form>
+      <p>이메일 info@usdentalconsulting.com | 카카오톡 @usdental</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>US Dental Consulting</h4>
+        <p>대표: 김지훈 | 사업자등록번호: 123-45-67890</p>
+        <p>서울특별시 강남구 테헤란로 123, 8층</p>
+      </div>
+      <div>
+        <h4>정책 안내</h4>
+        <ul>
+          <li><a href="#" style="color: inherit;">개인정보 처리 방침</a></li>
+          <li><a href="#" style="color: inherit;">이용약관</a></li>
+          <li><a href="#" style="color: inherit;">제휴 문의</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>소셜 & 뉴스레터</h4>
+        <div class="social">
+          <a href="#">LinkedIn</a>
+          <a href="#">YouTube</a>
+          <a href="#">Instagram</a>
+        </div>
+        <form style="margin-top: 1rem;">
+          <input type="email" placeholder="이메일 입력" style="padding: 0.8rem; border-radius: 8px; border: none; width: 100%;">
+        </form>
+      </div>
+    </div>
+    <p style="margin-top: 2rem; text-align: center;">© 2024 US Dental Consulting. All rights reserved.</p>
+  </footer>
+</body>
+</html>
