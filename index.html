@@ -3,90 +3,183 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>미국 치대 컨설팅</title>
+  <title>DentWay | 미국 치대 컨설팅 & DSAT/AP 학업 코칭</title>
+  <meta name="description" content="DentWay: 미국 치대 입시·Kira/CASPer·DSAT/AP 학업 컨설팅. 현역 DDS 학생이 제공하는 1:1 실전 로드맵과 After-care 코칭." />
+  <meta name="keywords" content="미국 치대 컨설팅, Kira 면접, CASPer 준비, 치대 인터뷰, DSAT 튜터, AP 과외, 치대 지원 서류, AADSAS, dental school admissions consulting, Kira interview practice, CASPer prep, DSAT tutor" />
+  <meta name="robots" content="index, follow" />
   <style>
     :root {
-      --blue: #395896;
-      --light-blue: #e8efff;
-      --gray: #5a6572;
-      --accent: #f7b032;
-      --bg: #f8fafc;
+      --primary: #1f3d63;
+      --primary-dark: #172c46;
+      --accent: #00b3ad;
+      --accent-soft: #d8f2f1;
+      --bg: #f5f7fb;
+      --text: #4a5568;
+      --text-light: #6c7a92;
+      --border: #e2e8f0;
+      --shadow: 0 16px 40px rgba(23, 44, 70, 0.08);
     }
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
-      color: var(--gray);
+      color: var(--text);
       line-height: 1.6;
     }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
     header {
-      background: white;
       position: sticky;
       top: 0;
-      z-index: 10;
-      border-bottom: 1px solid #e1e7ef;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
     .nav {
-      max-width: 1100px;
-      padding: 1.2rem;
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 0.9rem 1.2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       gap: 1rem;
-    }
-    .nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 1.2rem;
-      font-size: 0.95rem;
     }
     .logo {
       font-weight: 700;
-      color: var(--blue);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      color: var(--primary);
     }
-    a { color: inherit; text-decoration: none; }
+    .nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: 1.1rem;
+      flex: 1;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+    .nav-cta {
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #0b1c2f;
+      font-weight: 600;
+    }
+    .language-toggle {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-light);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
     .hero {
-      background: linear-gradient(130deg, var(--light-blue), #ffffff 40%);
-      padding: 4rem 1.2rem;
+      padding: 5rem 1.2rem 4rem;
+      background: linear-gradient(140deg, #ffffff 40%, var(--accent-soft) 100%);
     }
     .hero-inner {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
       align-items: center;
     }
-    .hero h1 {
-      color: var(--blue);
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      margin-bottom: 1rem;
+    .eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.14rem;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
     }
-    .hero-buttons {
+    h1 {
+      font-size: clamp(2.3rem, 4vw, 3.2rem);
+      color: var(--primary);
+      margin: 0.7rem 0;
+      line-height: 1.2;
+    }
+    .hero ul {
+      padding: 0;
+      margin: 1.5rem 0 2rem;
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+    }
+    .hero ul li {
       display: flex;
-      gap: 1rem;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+    .hero ul li::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    .hero-ctas {
+      display: flex;
       flex-wrap: wrap;
-      margin-top: 1.8rem;
+      gap: 1rem;
     }
     .btn {
-      padding: 0.85rem 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
       border-radius: 999px;
-      font-weight: 600;
       border: none;
+      padding: 0.9rem 1.6rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-primary { background: var(--blue); color: #fff; }
-    .btn-secondary { background: #fff; color: var(--blue); border: 1px solid var(--blue); }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(31, 61, 99, 0.16);
+    }
+    .btn-secondary {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
     .btn:hover { transform: translateY(-2px); }
+
     section { padding: 4rem 1.2rem; }
     .container { max-width: 1100px; margin: 0 auto; }
-    h2 { color: var(--blue); font-size: clamp(1.7rem, 3vw, 2.1rem); margin-bottom: 1.2rem; }
+    h2 { color: var(--primary); font-size: clamp(1.9rem, 3vw, 2.4rem); margin: 0; }
+    .subtitle { color: var(--text-light); margin: 0.5rem 0 2rem; font-size: 0.95rem; }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .trust-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+    .badge-strip {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      text-align: center;
+      color: var(--text-light);
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -95,112 +188,302 @@
     .card {
       background: #fff;
       border-radius: 16px;
-      padding: 1.6rem;
-      box-shadow: 0 12px 25px rgba(57, 88, 150, 0.08);
-      min-height: 180px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
-    .card h3 {
-      margin-top: 0;
-      color: var(--blue);
-      font-size: 1.2rem;
-    }
-    .process {
+    .card h3 { margin: 0; color: var(--primary); font-size: 1.15rem; }
+    .card .subtitle { margin: 0; }
+
+    .process-steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      gap: 1.2rem;
+      counter-reset: step;
     }
     .process-step {
+      position: relative;
       background: #fff;
+      border-radius: 14px;
+      padding: 1.6rem 1.5rem 1.5rem 1.5rem;
       border-left: 6px solid var(--accent);
-      padding: 1.5rem;
-      border-radius: 12px;
+      min-height: 170px;
     }
-    .process-step span {
-      display: inline-block;
+    .process-step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
     }
-    .stats {
+
+    .results-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
-      text-align: center;
     }
-    .stat {
+    .result {
       background: #fff;
-      padding: 2rem 1rem;
       border-radius: 16px;
-      box-shadow: 0 8px 18px rgba(57, 88, 150, 0.08);
+      padding: 1.8rem;
+      border: 1px solid var(--border);
     }
-    .stat strong { display: block; font-size: 2rem; color: var(--blue); }
-    .timeline {
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .pricing-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      box-shadow: var(--shadow);
+      border-top: 6px solid transparent;
+    }
+    .pricing-card.highlight { border-top-color: var(--accent); }
+    .pricing-card h3 { margin: 0 0 0.3rem; }
+    .price-placeholder {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .pricing-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+    .pricing-card ul li {
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    .pricing-card ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .resources {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 1.5rem;
+    }
+    .resource-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+
+    .faq {
+      display: grid;
+      gap: 1rem;
+    }
+    .accordion {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .accordion-button {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 1.1rem 1.3rem;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 1.3rem;
+    }
+    .accordion-content p { margin: 1rem 0; }
+    .accordion.open .accordion-content { padding-bottom: 1.2rem; }
+
+    .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
     }
-    .testimonial {
+    .blog-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.6rem;
+      border: 1px solid var(--border);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+    }
+    .contact form {
       background: #fff;
       border-radius: 16px;
       padding: 1.8rem;
-      box-shadow: 0 10px 20px rgba(57, 88, 150, 0.08);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 1rem;
     }
-    .cta {
-      background: var(--blue);
+    .contact form input,
+    .contact form textarea,
+    .contact form select {
+      padding: 0.75rem 0.9rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+    .contact iframe {
+      width: 100%;
+      min-height: 480px;
+      border: none;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-contact {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      display: grid;
+      gap: 0.6rem;
+      z-index: 120;
+    }
+    .floating-contact a {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      box-shadow: 0 10px 20px rgba(23, 44, 70, 0.25);
+    }
+
+    .cta-band {
+      background: var(--primary);
       color: #fff;
       text-align: center;
       padding: 3rem 1.2rem;
     }
-    .cta h2 { color: #fff; margin-bottom: 1rem; }
-    .cta-form {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      max-width: 680px;
-      margin: 1.5rem auto 0;
-    }
-    .cta-form input, .cta-form select {
-      padding: 0.9rem;
-      border-radius: 8px;
+    .cta-band .btn-secondary {
+      background: #fff;
+      color: var(--primary);
       border: none;
-      font-size: 1rem;
     }
-    .cta-form button { background: var(--accent); color: #1b2a4b; }
+
+    .school-notes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .note-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
     footer {
       background: #0f1f3a;
-      color: rgba(255, 255, 255, 0.7);
-      padding: 2.5rem 1.2rem;
+      color: rgba(255, 255, 255, 0.76);
+      padding: 3rem 1.2rem;
+      font-size: 0.9rem;
     }
     footer .footer-inner {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
+      gap: 1.5rem;
     }
-    footer h4 { margin: 0 0 0.8rem; color: #fff; }
-    footer ul { list-style: none; padding: 0; margin: 0; }
-    footer li { margin-bottom: 0.5rem; }
-    footer .social a { display: inline-block; margin-right: 0.6rem; color: rgba(255,255,255,0.8); }
-    @media (max-width: 640px) {
-      .nav ul { flex-wrap: wrap; justify-content: center; }
-      .hero { padding-top: 3rem; }
+    footer h4 { color: #fff; margin: 0 0 0.6rem; }
+    footer .legal { margin-top: 1.5rem; }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 31, 58, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 1.5rem;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 1rem;
+    }
+    .modal-close {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+    .modal form { display: grid; gap: 0.9rem; }
+    .modal form input { padding: 0.75rem 0.9rem; border-radius: 10px; border: 1px solid var(--border); }
+
+    .text-en { font-size: 0.9rem; color: var(--text-light); margin-top: 0.25rem; }
+    .lang-kr .text-en { display: none; }
+    .lang-en .text-kr { display: none; }
+    .lang-en .text-en { display: block; font-size: 1rem; color: var(--primary); }
+
+    @media (max-width: 960px) {
+      .nav { flex-wrap: wrap; justify-content: center; }
+      .nav ul { flex-wrap: wrap; }
+      .nav-cta { order: 3; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding-top: 4rem; }
+      .floating-contact { right: 1rem; bottom: 1rem; }
+      .floating-contact a { font-size: 0.8rem; }
     }
   </style>
 </head>
-<body>
+<body class="lang-both">
   <header>
     <nav class="nav">
-      <div class="logo">US Dental Consulting</div>
+      <a href="#hero" class="logo">DentWay</a>
+      <button type="button" class="language-toggle" id="languageToggle">KR + EN</button>
       <ul>
-        <li><a href="#hero">홈</a></li>
-        <li><a href="#services">서비스</a></li>
-        <li><a href="#success">성공사례</a></li>
-        <li><a href="#team">컨설턴트</a></li>
-        <li><a href="#blog">블로그</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">상담예약</a></li>
+        <li><a href="#hero">Hero</a></li>
+        <li><a href="#trust">Trust</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <a class="nav-cta" href="#contact">무료 진단 상담</a>
     </nav>
   </header>
 
@@ -208,125 +491,310 @@
     <section class="hero" id="hero">
       <div class="hero-inner">
         <div>
-          <h1>미국 치대 합격을 위한 1:1 맞춤 컨설팅</h1>
-          <p>사전 평가부터 합격 후 준비까지 전 과정 전문 관리. 평균 합격률 87%, 누적 합격자 320명 이상의 경험을 만나보세요.</p>
-          <div class="hero-buttons">
-            <button class="btn btn-primary">무료 상담 신청</button>
-            <button class="btn btn-secondary">합격 사례 보기</button>
+          <p class="eyebrow text-kr">합격 그 이후까지 동행</p>
+          <h1>
+            <span class="text-kr">미국 치대, 합격 그 이후까지. DentWay와 실전형 로드맵으로 준비하세요.</span>
+            <span class="text-en">U.S. Dental School admissions & study consulting guided by an active DDS student.</span>
+          </h1>
+          <ul>
+            <li><span class="text-kr">Kira/CASPer·파이널 인터뷰 1:1 코칭(실전 질문은행 + 모의 녹화 피드백)</span><span class="text-en">1:1 Kira, CASPer, and final interview drills with recorded feedback.</span></li>
+            <li><span class="text-kr">DSAT/AP·대학·치대 학업 전략 컨설팅(진단-맞춤 로드맵·주간 리포트)</span><span class="text-en">DSAT/AP and academic roadmaps with weekly analytics reports.</span></li>
+            <li><span class="text-kr">입학 후 학습·연구·커리큘럼까지 연계(After-care)</span><span class="text-en">After-care support covering coursework, research, and program fit.</span></li>
+          </ul>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#calendly">무료 진단 상담 예약</a>
+            <button class="btn btn-secondary" data-open-modal="lead">자료 받기: Kira 핵심 32문항 PDF</button>
           </div>
         </div>
         <div class="card">
-          <h3>핵심 가치</h3>
-          <ul>
-            <li>개인화 로드맵 설계</li>
-            <li>에세이 & 인터뷰 전담 코칭</li>
-            <li>원서 타임라인 & 체크리스트 관리</li>
-            <li>재정·비자·기숙사 정보 제공</li>
-          </ul>
+          <h3 class="text-kr">DentWay Core Promise</h3>
+          <p class="text-en">Structured data-backed coaching across applications, interviews, and academics.</p>
+          <p class="text-kr">현역 DDS 학생의 실전 데이터와 모의 세션 자료를 기반으로, 합격 이후까지 이어지는 커리큘럼·연구·생활 전략을 통합 제공합니다.</p>
+          <div class="badge-strip" role="list">
+            <span role="listitem">ADEA AADSAS Strategy</span>
+            <span role="listitem">Kira / CASPer Bank</span>
+            <span role="listitem">DSAT Analytics</span>
+            <span role="listitem">After-care Check-ins</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="container">
+        <h2 class="text-kr">Why DentWay</h2>
+        <p class="subtitle text-en">Evidence-based mentorship anchored by a current DDS candidate.</p>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <strong class="text-kr">현역 DDS 학생의 데이터 기반 지도</strong>
+            <p class="text-kr">CWRU School of Dental Medicine Class of 2028. 최신 Kira/CASPer, Rolling 평가 기준을 직접 경험하며 정리했습니다.</p>
+            <p class="text-en">CWRU SODM ’28 candidate delivering up-to-date admissions intelligence.</p>
+          </div>
+          <div class="trust-card">
+            <strong class="text-kr">DSAT/학업 코칭 500+ 시간</strong>
+            <p class="text-kr">Reading·Math·AP Chem/Bio/Calc 집중 코칭으로 유형별 약점 교정과 시험 체력을 구축했습니다.</p>
+            <p class="text-en">500+ hours of 1:1 DSAT/AP instruction with weekly diagnostics.</p>
+          </div>
+          <div class="trust-card">
+            <strong class="text-kr">합격 이후까지 이어지는 After-care</strong>
+            <p class="text-kr">입학 결정 후 장학·주거·연구·커리큘럼 선택까지 파트너십 학교/동문 네트워크와 연계합니다.</p>
+            <p class="text-en">Post-acceptance coaching for scholarships, housing, research, and coursework.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="services">
       <div class="container">
-        <h2>컨설팅 패키지</h2>
+        <h2 class="text-kr">서비스 패키지</h2>
+        <p class="subtitle text-en">Tailored consulting across admissions, testing, and academic strategy.</p>
         <div class="cards">
           <div class="card">
-            <h3>기본 패키지</h3>
-            <p>사전 평가와 SWOT 분석을 기반으로 목표 학교에 맞춘 전략 설계를 제공합니다.</p>
+            <h3 class="text-kr">미국 치대 입시 컨설팅</h3>
+            <p class="text-en">Dental School Admissions</p>
+            <p class="text-kr">ADEA AADSAS 전략, 학교 리스트·타임라인 설계, 에세이·추천서·포트폴리오 정리, Kira/CASPer·파이널 인터뷰 코칭, 합격 후 주거·커리큘럼·연구 연결까지 제공합니다.</p>
           </div>
           <div class="card">
-            <h3>프리미엄 패키지</h3>
-            <p>서류 준비부터 제출, 인터뷰 및 최종 등록까지 전 과정 동행 관리 프로그램입니다.</p>
+            <h3 class="text-kr">DSAT & AP 집중 튜터링</h3>
+            <p class="text-en">DSAT & AP Tutoring</p>
+            <p class="text-kr">Reading/Math 유형별 전략, 파라프레이징 훈련, AP Chem/Bio/Calc 심화와 주간 리포트로 성취도와 시험 감각을 관리합니다.</p>
           </div>
           <div class="card">
-            <h3>에세이 집중</h3>
-            <p>Personal Statement, Secondary Essay, 추천서 포트폴리오에 대한 집중 피드백을 제공합니다.</p>
+            <h3 class="text-kr">학업·연구 컨설팅</h3>
+            <p class="text-en">Academic Consulting</p>
+            <p class="text-kr">학업 설계, 연구·포스터·CV 정리, 대학→치대 브릿지 로드맵으로 경쟁력 있는 Story-building을 지원합니다.</p>
           </div>
           <div class="card">
-            <h3>인터뷰 부스터</h3>
-            <p>Mock Interview, 예상 질문 리스트, 비언어 커뮤니케이션 코칭을 통해 면접 대비를 도와드립니다.</p>
-          </div>
-          <div class="card">
-            <h3>재지원 맞춤</h3>
-            <p>지난 탈락 원인을 분석 후 보완 전략과 새로운 지원 플랜을 제시합니다.</p>
+            <h3 class="text-kr">B2B·학교 제휴 프로그램</h3>
+            <p class="text-en">Optional B2B Programs</p>
+            <p class="text-kr">국내 국제학교/학원/소그룹 대상 맞춤 커리큘럼과 Kira/CASPer 집체 트레이닝을 제공합니다.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="process">
       <div class="container">
-        <h2>진행 프로세스</h2>
-        <div class="process">
-          <div class="process-step"><span>01</span> 목표 설정 &nbsp;|&nbsp; 희망 학교, 일정, 예산, DAT 목표를 함께 정리합니다.</div>
-          <div class="process-step"><span>02</span> 경쟁력 분석 &nbsp;|&nbsp; GPA, Activity, Shadowing, Reference 등 강약점을 점검합니다.</div>
-          <div class="process-step"><span>03</span> 전략 설계 &nbsp;|&nbsp; 학교 리스트, 타임라인, 필수 준비 리소스를 제공합니다.</div>
-          <div class="process-step"><span>04</span> 실행 코칭 &nbsp;|&nbsp; 에세이 첨삭, 인터뷰 코칭, 원서 제출을 관리합니다.</div>
-          <div class="process-step"><span>05</span> 합격 후 지원 &nbsp;|&nbsp; I-20, 비자, 주거, 보험, 사전 오리엔테이션을 돕습니다.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="success">
-      <div class="container">
-        <h2>성공사례 & 데이터</h2>
-        <div class="timeline">
-          <div class="testimonial">
-            <h3>김미소 | University of Michigan</h3>
-            <p>DAT 재도전과 에세이 구성을 전면 수정한 결과, 인터뷰 초청 3곳과 함께 최종 합격을 달성했습니다.</p>
-            <p><strong>키포인트:</strong> Mock Interview 6회, 활동 포트폴리오 재정비, 입학처 피드백 활용.</p>
+        <h2 class="text-kr">진행 프로세스</h2>
+        <p class="subtitle text-en">Structured roadmap from diagnosis to post-acceptance.</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <strong class="text-kr">Diagnosis</strong>
+            <p class="text-kr">성적·EC·추천서·에세이·인터뷰 진단 인터뷰를 통해 리스크와 우선순위를 도출합니다.</p>
+            <p class="text-en">Intake interview to surface gaps across academics, ECs, and narratives.</p>
           </div>
-          <div class="testimonial">
-            <h3>Lee Jae | UCLA School of Dentistry</h3>
-            <p>GPA 대비 활동 경쟁력을 높이기 위해 Shadowing 플랜과 봉사활동을 구조화해 경쟁력을 확보했습니다.</p>
-            <p><strong>키포인트:</strong> 추천서 멘토링, 에세이 톤 조정, 인터뷰 Q&A 데이터베이스.</p>
+          <div class="process-step">
+            <strong class="text-kr">Roadmap</strong>
+            <p class="text-kr">Rolling 전략을 고려한 타임라인과 목표 학교 매칭, 준비 자원 패키징을 제공합니다.</p>
+            <p class="text-en">Timeline engineering with school fit mapping and resource packaging.</p>
           </div>
-          <div class="testimonial">
-            <h3>박소연 | NYU College of Dentistry</h3>
-            <p>국제 지원자 맞춤 전략으로 비자 및 장학금까지 연계한 종합 패키지로 합격을 이뤘습니다.</p>
-            <p><strong>키포인트:</strong> TOEFL 스코어 관리, 재정 보증 설계, Post-acceptance 가이드.</p>
+          <div class="process-step">
+            <strong class="text-kr">Materials</strong>
+            <p class="text-kr">PS·Secondary·CV 구조화, 증빙 정리와 리뷰 사이클 운영으로 서류 완성도를 높입니다.</p>
+            <p class="text-en">Iterative reviews for PS, secondary essays, CV, and documentation.</p>
           </div>
-        </div>
-        <div class="stats" style="margin-top: 2rem;">
-          <div class="stat">
-            <strong>87%</strong>
-            평균 합격률 (최근 3년)
+          <div class="process-step">
+            <strong class="text-kr">Interview</strong>
+            <p class="text-kr">Kira/CASPer 질문은행 기반 모의·피드백, 파이널 인터뷰 스토리 구조를 설계합니다.</p>
+            <p class="text-en">Scenario-based drills for Kira, CASPer, and final interviews.</p>
           </div>
-          <div class="stat">
-            <strong>320+</strong>
-            누적 합격자 수
-          </div>
-          <div class="stat">
-            <strong>4.8/5</strong>
-            고객 만족도 점수
-          </div>
-          <div class="stat">
-            <strong>6.5개월</strong>
-            평균 합격 소요 기간
+          <div class="process-step">
+            <strong class="text-kr">Decision & After-care</strong>
+            <p class="text-kr">오퍼 비교, 장학·등록, 주거, 커리큘럼, 연구 연결까지 후속 지원을 제공합니다.</p>
+            <p class="text-en">Offer navigation and ongoing academic/research mentoring.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="team">
+    <section id="results">
       <div class="container">
-        <h2>컨설턴트 소개</h2>
+        <h2 class="text-kr">성과 & 전환 사례</h2>
+        <p class="subtitle text-en">Case-style snippets showing measurable shifts (results vary by student).</p>
+        <div class="results-grid">
+          <div class="result">
+            <h3 class="text-kr">DSAT 집중 코칭 → 약점 유형 교정</h3>
+            <p class="text-kr">Reading Section에서 문장 구조 해석을 강화하여 6주 만에 ‘Inference’ 오답률 48%→18%로 하락, 시험 체력 관리 루틴으로 실전 점수 안정화.</p>
+            <p class="text-en">Targeted reading drills reduced inference errors from 48% to 18% within six weeks.</p>
+          </div>
+          <div class="result">
+            <h3 class="text-kr">AP Chem/Bio 병행 로드맵</h3>
+            <p class="text-kr">랩 리포트 피드백과 주간 스터디 체크인으로 모의고사 4점 → 5점 달성. 대학 연구실 섀도윙 연결.</p>
+            <p class="text-en">Joint AP Chem/Bio coaching led to consistent 5s and research shadowing access.</p>
+          </div>
+          <div class="result">
+            <h3 class="text-kr">Kira/CASPer 모의 후 자신감 향상</h3>
+            <p class="text-kr">비디오 녹화·재피드백 3회 운영으로 응답 구조화 속도 향상, UDM/NYU 인터뷰에서 Follow-up 질문 대응력 상승.</p>
+            <p class="text-en">Recording-based mock sessions improved response structure for NYU/UDM invites.</p>
+          </div>
+        </div>
+        <p class="subtitle text-kr" style="margin-top:2rem;">※ 성과는 개인별 기초 역량과 준비 기간에 따라 상이할 수 있습니다.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="text-kr">Founder 소개</h2>
+        <p class="subtitle text-en">Data-driven consulting by a bilingual DDS candidate.</p>
         <div class="cards">
           <div class="card">
-            <h3>정하늘 수석 컨설턴트</h3>
-            <p>전 미국 치대 입학처 어드미션 오피서. 전략 수립 및 에세이 스토리텔링 전문가.</p>
-            <p><strong>전문분야:</strong> Pre-Dental 로드맵, 인터뷰 코칭</p>
+            <h3 class="text-kr">조직 이력</h3>
+            <p class="text-kr">DentWay는 CWRU School of Dental Medicine DDS Candidate(’28)가 주도하는 1:1 입시·학업 컨설팅 부티크입니다. Chemistry BA (Summa Cum Laude), 치과 어시스턴트 경력, 연구·포스터 발표 경험을 바탕으로 실전 데이터를 축적하고 있습니다.</p>
+            <p class="text-en">Led by a CWRU SODM ’28 DDS candidate with chemistry research and dental assisting background.</p>
           </div>
           <div class="card">
-            <h3>최은재 컨설턴트</h3>
-            <p>NYU 치대 졸업 & 미국 임상 경력 8년. 재정 설계 및 비자 멘토링 담당.</p>
-            <p><strong>전문분야:</strong> 국제 지원자, 장학금 컨설팅</p>
+            <h3 class="text-kr">코칭 철학</h3>
+            <p class="text-kr">학생·보호자와의 투명한 커뮤니케이션, 주간 리포트 기반 데이터 피드백, 자기 주도적 서류 작성과 윤리 준수를 핵심 가치로 삼습니다.</p>
+            <p class="text-en">Transparent communication, weekly analytics, and ethics-first narrative building.</p>
           </div>
           <div class="card">
-            <h3>박도윤 컨설턴트</h3>
-            <p>DAT 고득점 멘토로 성적 향상 및 시험 일정 관리에 특화된 프로그램을 운영합니다.</p>
-            <p><strong>전문분야:</strong> DAT 준비, 포트폴리오 구축</p>
+            <h3 class="text-kr">연락처</h3>
+            <p class="text-kr">이메일: doxeeel@gmail.com<br>전화: 010-4301-7885</p>
+            <p class="text-en">Email and phone placeholders — customize before launch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container resources">
+        <div>
+          <h2 class="text-kr">리드 매그넷 & 자료</h2>
+          <p class="subtitle text-en">Download-ready resources gated by email opt-in.</p>
+          <ul class="resource-list">
+            <li><span class="text-kr">Kira 핵심 32문항 PDF</span><span class="text-en">Top 32 Kira prompts with structure tips.</span></li>
+            <li><span class="text-kr">DSAT Reading Paraphrasing Guide</span><span class="text-en">Stepwise paraphrasing drills.</span></li>
+            <li><span class="text-kr">Dental School Timeline 체크리스트</span><span class="text-en">Rolling-friendly timeline checklist.</span></li>
+          </ul>
+        </div>
+        <form id="leadForm">
+          <label class="text-kr" for="lead-name">이름</label>
+          <input id="lead-name" name="name" type="text" required placeholder="홍길동" />
+          <label class="text-kr" for="lead-email">이메일</label>
+          <input id="lead-email" name="email" type="email" required placeholder="dentway@example.com" />
+          <button class="btn btn-primary" type="submit">리소스 메일로 받기</button>
+          <p class="text-en" style="margin:0;">Your details remain private; unsubscribe anytime.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <h2 class="text-kr">투명한 패키지</h2>
+        <p class="subtitle text-en">Set your own price points later — tiers stay flexible.</p>
+        <div class="pricing">
+          <div class="pricing-card">
+            <h3 class="text-kr">Starter</h3>
+            <p class="text-en">Initial Audit Package</p>
+            <p class="price-placeholder">₩X,XXX,XXX (추후 입력)</p>
+            <ul>
+              <li><span class="text-kr">진단 세션 & 로드맵 설계</span></li>
+              <li><span class="text-kr">Personal Statement 1회 피드백</span></li>
+              <li><span class="text-kr">Kira 핵심 32문항 PDF 제공</span></li>
+            </ul>
+          </div>
+          <div class="pricing-card highlight">
+            <h3 class="text-kr">Core</h3>
+            <p class="text-en">Interview Accelerator</p>
+            <p class="price-placeholder">₩X,XXX,XXX (추후 입력)</p>
+            <ul>
+              <li><span class="text-kr">Starter 구성 포함</span></li>
+              <li><span class="text-kr">Kira/CASPer 모의 2회 (녹화 피드백)</span></li>
+              <li><span class="text-kr">파이널 인터뷰 1회 코칭</span></li>
+            </ul>
+          </div>
+          <div class="pricing-card">
+            <h3 class="text-kr">Premium</h3>
+            <p class="text-en">Full-cycle & After-care</p>
+            <p class="price-placeholder">₩X,XXX,XXX (추후 입력)</p>
+            <ul>
+              <li><span class="text-kr">Core 구성 포함</span></li>
+              <li><span class="text-kr">전 과정 서류 & 일정 코칭</span></li>
+              <li><span class="text-kr">After-care 체크-인 (학업·연구)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="school-notes">
+      <div class="container">
+        <h2 class="text-kr">학교별 인터뷰 메모</h2>
+        <p class="subtitle text-en">Update each cycle — confirm with official admissions pages.</p>
+        <div class="school-notes">
+          <div class="note-card">
+            <h3>NYU</h3>
+            <p class="text-kr">대부분 지원자 대상 Kira 비동기 영상 제출. 1회 녹화 규칙, 사전 로그인 테스트 필수.</p>
+            <p class="text-en">All applicants typically submit asynchronous Kira videos; one-take rule applies.</p>
+          </div>
+          <div class="note-card">
+            <h3>UDM</h3>
+            <p class="text-kr">인터뷰 초대 시 Kira 필수. 합격 통보 12/15 이후 롤링. 답변 업로드 시간 준수 필요.</p>
+            <p class="text-en">Kira required post-invite; offers roll out after Dec 15.</p>
+          </div>
+          <div class="note-card">
+            <h3>Columbia</h3>
+            <p class="text-kr">Zoom 인터뷰가 기본, 필요 시 Kira 추가 요청. 케이스 기반 질문 가능.</p>
+            <p class="text-en">Primary Zoom interview; ad hoc Kira prompts possible.</p>
+          </div>
+          <div class="note-card">
+            <h3>기타 주요 학교</h3>
+            <p class="text-kr">CWRU/UPenn/USC/LLU 등은 개인·MMI·미션 핏 포맷이 사이클별로 변동될 수 있습니다. 최신 공지 확인 필수.</p>
+            <p class="text-en">CWRU, UPenn, USC, LLU interview formats vary by cycle — verify updates.</p>
+          </div>
+        </div>
+        <p class="subtitle text-kr" style="margin-top:1.5rem;">※ 최신 학교 정책은 공식 사이트/공지사항을 반드시 확인하세요.</p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <h2 class="text-kr">다음 사이클 준비, 지금 시작하세요.</h2>
+      <p class="text-en">Secure your slot for the upcoming admissions cycle.</p>
+      <div class="hero-ctas" style="justify-content:center; margin-top:2rem;">
+        <a class="btn btn-secondary" href="#contact">무료 진단 상담</a>
+        <button class="btn btn-primary" data-open-modal="lead">Exit-intent offer: Kira 32문항 PDF</button>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2 class="text-kr">자주 묻는 질문</h2>
+        <p class="subtitle text-en">Compliance-first answers for ethical preparation.</p>
+        <div class="faq">
+          <div class="accordion">
+            <button class="accordion-button" type="button">Kira와 CASPer의 차이와 준비법?<span>+</span></button>
+            <div class="accordion-content">
+              <p class="text-kr">Kira는 비동기(영상/텍스트) 녹화 시스템, CASPer는 라이브형 타이핑·영상 혼합 평가입니다. 조용한 환경 세팅, 장비 점검, 질문 구조 메모, 재녹화 가능 횟수(학교별 다름)를 확인하세요.</p>
+              <p class="text-en">Kira is asynchronous video/text; CASPer blends live typing and video. Prep includes environment setup, timing drills, and understanding retake policies.</p>
+            </div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-button" type="button">학교별 인터뷰 유형은 어떻게 다른가요?<span>+</span></button>
+            <div class="accordion-content">
+              <p class="text-kr">개인·MMI·그룹/케이스 인터뷰 구성이 학교·연도마다 달라집니다. DentWay는 최신 사이클 정보를 수집하여 대비 자료를 업데이트합니다.</p>
+              <p class="text-en">Formats shift yearly; we track cycle-specific updates for targeted drills.</p>
+            </div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-button" type="button">DSAT·AP 병행 시 주간 리포트는 어떻게 운영되나요?<span>+</span></button>
+            <div class="accordion-content">
+              <p class="text-kr">매주 섹션별 정량/정성 데이터를 정리하고, 약점 유형별 과제와 시험 체력 루틴을 제안합니다.</p>
+              <p class="text-en">Weekly reports include quantitative trends and tailored assignments.</p>
+            </div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-button" type="button">합격 이후 After-care는 어떤 내용을 포함하나요?<span>+</span></button>
+            <div class="accordion-content">
+              <p class="text-kr">오퍼 비교, 장학·비자 서류, 주거·커리큘럼·연구실 연결, 학업 적응 체크인을 포함합니다.</p>
+              <p class="text-en">Support extends to offers, scholarships, housing, curriculum, and labs.</p>
+            </div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-button" type="button">성과 보장이나 환불 정책은 어떻게 되나요?<span>+</span></button>
+            <div class="accordion-content">
+              <p class="text-kr">합격은 개별 역량과 준비도에 따라 달라지며 보장하지 않습니다. 프로그램 정책과 환불 절차는 계약서에 명시합니다.</p>
+              <p class="text-en">Results vary; no guarantees. Refund policies follow written agreements.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -334,103 +802,235 @@
 
     <section id="blog">
       <div class="container">
-        <h2>인사이트 & 리소스</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>미국 치대 입시 흐름 완벽 가이드</h3>
-            <p>원서 제출 시기, AADSAS 구성, 주요 준비물을 정리했습니다.</p>
-          </div>
-          <div class="card">
-            <h3>DAT 준비 전략</h3>
-            <p>시험 영역별 학습법, 추천 교재, 12주 학습 플랜을 체크해보세요.</p>
-          </div>
-          <div class="card">
-            <h3>에세이 작성 핵심 팁</h3>
-            <p>Personal Statement에서 강조해야 할 스토리라인과 톤을 설명합니다.</p>
-          </div>
-          <div class="card">
-            <h3>인터뷰 기출 & 모범 답변</h3>
-            <p>최근 5년 인터뷰 질문과 답변 전략을 큐레이션했습니다.</p>
-          </div>
-          <div class="card">
-            <h3>장학금 & 비자 정보</h3>
-            <p>DS-160, I-20, 장학금 신청 로드맵을 안내합니다.</p>
-          </div>
+        <h2 class="text-kr">블로그 인사이트</h2>
+        <p class="subtitle text-en">Evergreen articles to drive organic traffic.</p>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <h3 class="text-kr">Kira 면접: 구조화 답변 템플릿 (예시 문항 3)</h3>
+            <p class="text-en">Framework snippets for three sample prompts.</p>
+            <a href="#" class="text-kr">기사 보기</a>
+          </article>
+          <article class="blog-card">
+            <h3 class="text-kr">치대 지원 타임라인: Rolling 고려 체크리스트</h3>
+            <p class="text-en">Checklist for rolling admissions timing.</p>
+            <a href="#" class="text-kr">기사 보기</a>
+          </article>
+          <article class="blog-card">
+            <h3 class="text-kr">DSAT Reading: Paraphrasing 훈련법 (실전 스텝)</h3>
+            <p class="text-en">Step-by-step paraphrasing drills for DSAT reading.</p>
+            <a href="#" class="text-kr">기사 보기</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="faq">
+    <section id="contact">
       <div class="container">
-        <h2>자주 묻는 질문</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>상담은 어떻게 진행되나요?</h3>
-            <p>사전 설문 작성 후 온라인 미팅으로 현재 상황을 분석하고 맞춤 제안을 드립니다.</p>
-          </div>
-          <div class="card">
-            <h3>비용과 결제 방식은?</h3>
-            <p>패키지마다 비용이 상이하며, 카드·계좌이체·분할 결제가 가능합니다.</p>
-          </div>
-          <div class="card">
-            <h3>해외 거주자도 지원 가능한가요?</h3>
-            <p>온라인 기반으로 모든 서비스를 제공하며, 시차에 맞춰 상담 일정을 조율합니다.</p>
-          </div>
-          <div class="card">
-            <h3>컨설팅 기간은 어떻게 되나요?</h3>
-            <p>목표 학교 일정과 상황에 맞춰 3개월~12개월까지 유연하게 설계됩니다.</p>
+        <h2 class="text-kr">무료 진단 상담 예약</h2>
+        <p class="subtitle text-en">30-minute diagnostic call to map your next steps.</p>
+        <div class="contact">
+          <form>
+            <label class="text-kr" for="contact-name">이름 *</label>
+            <input id="contact-name" name="name" required placeholder="이름" />
+
+            <label class="text-kr" for="contact-email">이메일 *</label>
+            <input id="contact-email" name="email" type="email" required placeholder="you@example.com" />
+
+            <label class="text-kr" for="contact-grade">학년 / 목표 *</label>
+            <select id="contact-grade" name="grade" required>
+              <option value="" disabled selected>선택하세요</option>
+              <option>고등학생 - DSAT/AP 집중</option>
+              <option>대학생 - 치대 편입 준비</option>
+              <option>졸업생 - 재지원</option>
+              <option>기타</option>
+            </select>
+
+            <label class="text-kr" for="contact-message">요청 사항 *</label>
+            <textarea id="contact-message" name="message" rows="4" required placeholder="현재 상황과 상담 희망 내용을 적어주세요."></textarea>
+
+            <label class="text-kr" for="contact-phone">카카오톡 ID / 전화 (선택)</label>
+            <input id="contact-phone" name="phone" placeholder="dentway / 010-0000-0000" />
+
+            <button type="submit" class="btn btn-primary">상담 요청 보내기</button>
+            <p class="text-en" style="margin:0;">Expect a response within 24 hours.</p>
+          </form>
+          <div id="calendly">
+            <iframe src="https://calendly.com/sample-dentway/30min" title="DentWay Calendly"></iframe>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <h2>무료 상담으로 나만의 로드맵을 받아보세요</h2>
-      <p>아래 정보를 남겨주시면 24시간 이내 전문 컨설턴트가 연락드립니다.</p>
-      <form class="cta-form">
-        <input type="text" placeholder="이름" required>
-        <input type="email" placeholder="이메일" required>
-        <select required>
-          <option value="" disabled selected>목표 학교 선택</option>
-          <option>미시간 치대</option>
-          <option>UCLA 치대</option>
-          <option>NYU 치대</option>
-          <option>기타</option>
-        </select>
-        <button class="btn btn-primary" type="submit">상담 예약</button>
-      </form>
-      <p>이메일 info@usdentalconsulting.com | 카카오톡 @usdental</p>
     </section>
   </main>
+
+  <div class="floating-contact">
+    <a href="https://pf.kakao.com/" target="_blank" rel="noopener">카카오톡 실시간 상담</a>
+    <a href="https://wa.me/0000000000" target="_blank" rel="noopener">WhatsApp 상담</a>
+  </div>
 
   <footer>
     <div class="footer-inner">
       <div>
-        <h4>US Dental Consulting</h4>
-        <p>대표: 김지훈 | 사업자등록번호: 123-45-67890</p>
-        <p>서울특별시 강남구 테헤란로 123, 8층</p>
+        <h4>DentWay</h4>
+        <p>Placeholder 주소 | Placeholder 사업자 정보</p>
+        <p>대표 이메일: doxeeel@gmail.com | 전화: 010-4301-7885</p>
       </div>
       <div>
-        <h4>정책 안내</h4>
-        <ul>
-          <li><a href="#" style="color: inherit;">개인정보 처리 방침</a></li>
-          <li><a href="#" style="color: inherit;">이용약관</a></li>
-          <li><a href="#" style="color: inherit;">제휴 문의</a></li>
-        </ul>
+        <h4>정책</h4>
+        <p><a href="#" style="color:inherit;">개인정보 처리방침</a></p>
+        <p><a href="#" style="color:inherit;">이용약관</a></p>
+        <p><a href="#" style="color:inherit;">제휴 문의</a></p>
       </div>
       <div>
-        <h4>소셜 & 뉴스레터</h4>
-        <div class="social">
-          <a href="#">LinkedIn</a>
-          <a href="#">YouTube</a>
-          <a href="#">Instagram</a>
-        </div>
-        <form style="margin-top: 1rem;">
-          <input type="email" placeholder="이메일 입력" style="padding: 0.8rem; border-radius: 8px; border: none; width: 100%;">
-        </form>
+        <h4>공지</h4>
+        <p>모든 자료는 정보 제공 목적이며 합격 보장을 하지 않습니다.</p>
+        <p>에세이·서류는 학생 본인 저작 원칙을 따르며 표절·대필을 허용하지 않습니다.</p>
+        <p>학교 정책과 인터뷰 프로세스는 주기적으로 업데이트 바랍니다.</p>
       </div>
     </div>
-    <p style="margin-top: 2rem; text-align: center;">© 2024 US Dental Consulting. All rights reserved.</p>
+    <p class="legal">© 2024 DentWay. All rights reserved. GA4 · Meta Pixel 추적 코드는 출범 시 삽입하세요.</p>
   </footer>
+
+  <div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="닫기">×</button>
+      <h3 id="leadModalTitle" class="text-kr">Kira 핵심 32문항 PDF 받기</h3>
+      <p class="text-en">Pop your email below to receive the lead magnet instantly.</p>
+      <form>
+        <input type="text" placeholder="이름" required>
+        <input type="email" placeholder="이메일" required>
+        <button class="btn btn-primary" type="submit">자료 받기</button>
+      </form>
+      <small class="text-kr">※ 제출 즉시 다운로드 링크와 이메일이 발송됩니다.</small>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('languageToggle');
+    const body = document.body;
+    const states = ['lang-both', 'lang-kr', 'lang-en'];
+    const labels = ['KR + EN', 'KR only', 'EN only'];
+    let currentIndex = 0;
+    toggleBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % states.length;
+      body.className = states[currentIndex];
+      toggleBtn.textContent = labels[currentIndex];
+    });
+
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach((accordion) => {
+      const button = accordion.querySelector('.accordion-button');
+      const content = accordion.querySelector('.accordion-content');
+      button.addEventListener('click', () => {
+        const isOpen = accordion.classList.toggle('open');
+        content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : null;
+        button.querySelector('span').textContent = isOpen ? '−' : '+';
+      });
+    });
+
+    const modal = document.getElementById('leadModal');
+    const modalClose = modal.querySelector('.modal-close');
+    const modalTriggers = document.querySelectorAll('[data-open-modal="lead"]');
+    const openModal = () => modal.classList.add('active');
+    const closeModal = () => modal.classList.remove('active');
+    modalTriggers.forEach(btn => btn.addEventListener('click', openModal));
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    let exitIntentShown = false;
+    document.addEventListener('mouseleave', (event) => {
+      if (event.clientY <= 0 && !exitIntentShown) {
+        exitIntentShown = true;
+        openModal();
+      }
+    });
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DentWay",
+      "url": "https://example.com",
+      "logo": "https://example.com/assets/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com",
+        "https://www.youtube.com",
+        "https://www.instagram.com"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "doxeeel@gmail.com",
+        "telephone": "+82-10-4301-7885"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kira와 CASPer의 차이와 준비법?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kira는 비동기 녹화형, CASPer는 라이브형으로 구성됩니다. 장비 점검과 질문 구조화 훈련이 필수입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "학교별 인터뷰 유형은 어떻게 다른가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "학교별·연도별로 개인, MMI, 그룹 형태가 변동되며 최신 공지 확인이 필요합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "DSAT·AP 병행 시 주간 리포트는 어떻게 운영되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "주간 정량/정성 데이터를 분석해 과제와 시험 루틴을 제안합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "합격 이후 After-care는 어떤 내용을 포함하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "오퍼 비교, 장학/등록, 주거, 커리큘럼, 연구 연결을 지원합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "성과 보장이나 환불 정책은 어떻게 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "성과 보장은 하지 않으며, 환불 정책은 계약서에 명시합니다."
+          }
+        }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Kira 면접: 구조화 답변 템플릿",
+      "author": {
+        "@type": "Person",
+        "name": "DentWay"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DentWay"
+      },
+      "datePublished": "2024-01-01",
+      "description": "Kira 인터뷰 대응을 위한 구조화 답변 템플릿과 예시 문항을 소개합니다."
+    }
+  </script>
 </body>
 </html>
